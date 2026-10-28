@@ -563,8 +563,11 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .footer__col a:hover { color: var(--volt); }
 .footer__bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding-block: 1.4rem calc(1.4rem + 70px); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--t-xs); }
 .footer__credit { flex-basis: 100%; }
-.footer__credit a { text-decoration: none; }
-.footer__credit a:hover strong { color: var(--volt); }
+.footer__credit { display: inline-flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.footer__credit .coda { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; min-height: 32px; }
+.footer__credit .coda strong { color: var(--white); }
+.footer__credit .coda svg { transition: transform .3s var(--ease); }
+.footer__credit .coda:hover svg { transform: translateX(-2px) scale(1.1); }
 .footer__credit strong { color: var(--silver); letter-spacing: .08em; }
 @media (min-width: 768px) { .footer__credit { flex-basis: auto; } .footer__inner { grid-template-columns: 1.4fr 1fr 1fr; } .footer__bottom { padding-bottom: 1.4rem; } }
 
