@@ -14,7 +14,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="TAL Mobilidade Urbana — Tecnologia que move você">
   <meta property="og:description" content="Motos e scooters elétricas em Pinhais e Região. #vempraTal">
-  <meta property="og:image" content="assets/img/og-tal.jpg"><!-- PLACEHOLDER: imagem 1200x630 -->
+  <meta property="og:image" content="https://henriquecassou-stack.github.io/tal-mobilidade-site/assets/img/og-tal.jpg">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307080A'/%3E%3Cpath d='M18 4 9 18h6l-2 10 10-15h-6l3-9z' fill='%2338E8FF'/%3E%3C/svg%3E">
 
@@ -34,7 +34,7 @@
     "description": "Loja de motos e scooters elétricas em Pinhais/PR. Atende Pinhais e Região.",
     "url": "https://www.SEU-DOMINIO.com.br/",
     "telephone": "+55-41-00000-0000",
-    "image": "https://www.SEU-DOMINIO.com.br/assets/img/loja/fachada.webp",
+    "image": "https://henriquecassou-stack.github.io/tal-mobilidade-site/assets/img/loja/fachada.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Avenida Jacob Macanhan, 4134",
@@ -56,16 +56,7 @@
   <header class="header" id="topo">
     <div class="header__inner wrap">
       <a href="#topo" class="logo" aria-label="TAL Mobilidade Urbana — início">
-        <!-- PLACEHOLDER: substituir pelo arquivo oficial do logo (SVG). Este é um wordmark provisório. -->
-        <svg class="logo__svg" viewBox="0 0 118 48" aria-hidden="true">
-          <g transform="translate(10 0) skewX(-14)">
-            <path class="logo__letters" d="M0 2h30v8H20v26H10V10H0zM74 2h10v26h16v8H74z"/>
-            <path class="logo__letters" d="M34 36 46 2h12l12 34H60l-2.5-8h-11L44 36z"/>
-            <path class="logo__bolt" d="M54.5 7 46 21.5h5.2L48.4 32 58 16.6h-5.3L55.8 7z"/>
-            <rect class="logo__line" x="0" y="41" width="100" height="3.5"/>
-          </g>
-        </svg>
-        <span class="logo__tag">Mobilidade Urbana</span>
+        <img class="logo__img" src="assets/img/logo-tal.webp" width="640" height="316" alt="TAL Mobilidade Urbana">
       </a>
 
       <nav class="nav" id="nav" aria-label="Principal">
@@ -115,9 +106,9 @@
 
         <div class="hero__visual">
           <div class="hero__halo" aria-hidden="true"></div>
-          <!-- Troque a ilustração pela foto recortada da scooter quando tiver:
-               <img src="assets/img/hero-scooter.webp" width="1200" height="800" alt="Scooter elétrica Retrô TAL" fetchpriority="high"> -->
-          <div class="hero__scooter" id="heroScooter" role="img" aria-label="Ilustração de scooter elétrica estilo retrô"></div>
+          <div class="hero__scooter" id="heroScooter">
+            <img src="assets/img/modelos/retro.webp" width="360" height="570" alt="Scooter elétrica Retrô verde-menta da TAL em frente à loja" fetchpriority="high" decoding="async">
+          </div>
           <div class="hero__chip hero__chip--a"><b data-count="60">60</b><small>km por carga*</small></div>
           <div class="hero__chip hero__chip--b"><b data-count="1000">1000</b><small>W de motor*</small></div>
         </div>
@@ -347,14 +338,7 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <div class="footer__brand">
-        <svg class="logo__svg logo__svg--static" viewBox="0 0 118 48" aria-label="TAL">
-          <g transform="translate(10 0) skewX(-14)">
-            <path class="logo__letters" d="M0 2h30v8H20v26H10V10H0zM74 2h10v26h16v8H74z"/>
-            <path class="logo__letters" d="M34 36 46 2h12l12 34H60l-2.5-8h-11L44 36z"/>
-            <path class="logo__bolt" d="M54.5 7 46 21.5h5.2L48.4 32 58 16.6h-5.3L55.8 7z"/>
-            <rect class="logo__line" x="0" y="41" width="100" height="3.5"/>
-          </g>
-        </svg>
+        <img class="logo__img logo__img--footer" src="assets/img/logo-tal.webp" width="640" height="316" alt="TAL Mobilidade Urbana" loading="lazy">
         <p>Mobilidade urbana inteligente ⚡<br>Tecnologia que move você.</p>
       </div>
       <address class="footer__col">

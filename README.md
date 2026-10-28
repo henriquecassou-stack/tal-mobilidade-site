@@ -22,13 +22,23 @@ Site estático (HTML + CSS + JS puro), sem build. Para publicar, envie a pasta i
 - Loja: ~1600 px → `assets/img/loja/`.
 - Enquanto um campo `foto` estiver vazio, o site mostra uma ilustração/moldura marcada como PLACEHOLDER.
 
+## Origem das imagens
+
+Logo e fotos vieram do Instagram da própria TAL (@tal_mobilidade), em até 640–1320 px:
+
+- `assets/img/logo-tal.webp`: logo original (arte "Vem aí… TAL"), branco com fundo transparente.
+- `assets/img/modelos/`: Retrô (menta), Y1 e moto compacta rosa.
+- `assets/img/loja/`: fachada e vitrine.
+- `assets/img/clientes/`: posts do Instagram usados na galeria #vempraTal (não são fotos de clientes).
+
+Para melhor nitidez (principalmente a Retrô, que veio em 360 px), peça à loja os originais e substitua os arquivos mantendo os mesmos nomes.
+
 ## Pendências (PLACEHOLDER)
 
-- Arquivo oficial do logo (hoje é um wordmark provisório em SVG no `index.html`)
 - Número de WhatsApp com DDD (o link `wa.me/message/...` não aceita texto automático)
 - Nome e specs da moto rosa (R$ 3.999) e da chopper; demais modelos/cores
-- Specs de cor/estilo do Y1
-- Horários, fotos da fachada/showroom, fotos e depoimentos de clientes
+- Foto da chopper e do modelo extra (hoje ilustração)
+- Horários, fotos e depoimentos reais de clientes (com autorização)
 - Domínio, telefone e CEP no JSON-LD (`index.html`), imagem de compartilhamento `assets/img/og-tal.jpg`
 - Validar com a loja os benefícios da seção "Por que elétrica" e os valores de referência da calculadora
 

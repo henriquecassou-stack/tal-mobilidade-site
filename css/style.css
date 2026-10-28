@@ -122,14 +122,8 @@ ul, ol { padding: 0; list-style: none; }
 .header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 
 .logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; position: relative; z-index: 60; }
-.logo__svg { width: 84px; height: auto; }
-.logo__letters { fill: var(--white); }
-.logo__bolt { fill: var(--volt); }
-.logo__line { fill: var(--white); }
-.logo__tag {
-  font-size: .68rem; line-height: 1.1; color: var(--muted); font-weight: 600; letter-spacing: .04em;
-  max-width: 8ch; border-left: 1px solid var(--line); padding-left: .7rem;
-}
+.logo__img { width: 98px; height: auto; }
+@media (min-width: 768px) { .logo__img { width: 118px; } }
 
 .burger {
   width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: transparent;
@@ -251,8 +245,13 @@ ul, ol { padding: 0; list-style: none; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 .hero__visual { position: relative; min-height: 240px; display: grid; place-items: center; order: -1; margin-bottom: -.5rem; }
-.hero__scooter { width: min(100%, 560px); opacity: 0; animation: driveIn 1.2s .3s var(--ease) forwards; }
-.hero__scooter svg { width: 100%; height: auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+.hero__scooter { --cut: polygon(12% 0, 100% 0, 88% 100%, 0 100%); position: relative; width: min(58vw, 250px); opacity: 0; animation: driveIn 1.2s .3s var(--ease) forwards; }
+.hero__scooter::before { /* faixa de luz atrás da foto */
+  content: ""; position: absolute; inset: 0; transform: translate(14px, 14px); clip-path: var(--cut);
+  background: linear-gradient(160deg, var(--volt), transparent 72%); opacity: .8;
+}
+.hero__scooter img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 60%; clip-path: var(--cut); background: var(--graphite); }
+@media (min-width: 900px) { .hero__scooter { width: min(100%, 400px); } }
 @keyframes driveIn { from { opacity: 0; transform: translateX(-12%) skewX(-6deg); } to { opacity: 1; transform: none; } }
 .hero__halo {
   position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%;
@@ -278,13 +277,16 @@ ul, ol { padding: 0; list-style: none; }
 }
 
 /* Logo "acendendo" */
-.header .logo__bolt { animation: boltOn 1.4s .2s steps(1, end) both; }
-.header .logo__letters, .header .logo__line { animation: lettersOn 1.2s .35s ease-out both; }
-@keyframes boltOn {
-  0% { opacity: .1; } 10% { opacity: 1; filter: drop-shadow(0 0 6px var(--volt)); } 18% { opacity: .2; }
-  28% { opacity: 1; } 34% { opacity: .4; } 44%, 100% { opacity: 1; filter: drop-shadow(0 0 3px var(--volt)); }
+.header .logo__img { animation: logoOn 1.6s .2s both; }
+@keyframes logoOn {
+  0% { opacity: .06; filter: none; }
+  8% { opacity: 1; filter: drop-shadow(0 0 10px var(--volt)); }
+  14% { opacity: .12; filter: none; }
+  24% { opacity: 1; filter: drop-shadow(0 0 8px var(--volt)); }
+  30% { opacity: .35; filter: none; }
+  42% { opacity: 1; filter: drop-shadow(0 0 7px rgba(56,232,255,.8)); }
+  100% { opacity: 1; filter: drop-shadow(0 0 0 transparent); }
 }
-@keyframes lettersOn { from { opacity: .15; } to { opacity: 1; } }
 
 /* Ticker */
 .ticker { position: relative; z-index: 2; border-top: 1px solid var(--line); height: 64px; overflow: hidden; display: flex; align-items: center; }
@@ -357,7 +359,10 @@ ul, ol { padding: 0; list-style: none; }
 @keyframes cardIn { from { opacity: 0; transform: translateY(16px) scale(.98); } }
 .card:hover { border-color: color-mix(in srgb, var(--c) 55%, transparent); }
 
-.card__media { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; padding: 1.2rem; }
+.card__media { position: relative; aspect-ratio: var(--ar, 4 / 3); display: grid; place-items: center; overflow: hidden; padding: 1.2rem; }
+.card__media--photo { padding: 0; }
+.card__media--photo img { position: absolute; inset: 0; object-fit: cover; }
+.card:hover .card__media--photo img { transform: rotate(-2deg) scale(1.1); }
 .card__media::before { /* brilho na cor do produto */
   content: ""; position: absolute; inset: 15% 10% 0; z-index: -1; border-radius: 50%;
   background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 38%, transparent), transparent);
@@ -407,7 +412,7 @@ ul, ol { padding: 0; list-style: none; }
 /* Card destaque (Retrô) */
 @media (min-width: 1080px) {
   .card--feature { grid-column: span 2; flex-direction: row; }
-  .card--feature .card__media { flex: 1.3; aspect-ratio: auto; min-height: 380px; }
+  .card--feature .card__media { flex: 0 0 46%; }
   .card--feature .card__body { flex: 1; border-top: 0; border-left: 1px solid var(--line); padding: 2rem; justify-content: center; }
   .card--feature .card__name { font-size: 3.6rem; }
 }
@@ -492,7 +497,8 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
     linear-gradient(160deg, var(--steel), var(--ink));
   border: 1px solid var(--line);
 }
-.frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+#fotoFachada img { object-position: 22% 50%; }
 .frame:hover img { transform: scale(1.04); }
 .frame[data-label]:not(.has-img)::after {
   content: attr(data-label); position: absolute; inset: auto 1rem 1rem; color: #FFD27A; font-size: .75rem; font-weight: 600;
@@ -549,7 +555,7 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding-top: 3.5rem; background: var(--ink); }
 .footer__inner { display: grid; gap: 2rem; padding-bottom: 3rem; }
-.footer__brand .logo__svg { width: 110px; margin-bottom: 1rem; }
+.logo__img--footer { width: 150px; margin-bottom: 1rem; }
 .footer__brand p, .footer__col { color: var(--silver); font-size: var(--t-sm); font-style: normal; line-height: 1.7; }
 .footer__col { display: flex; flex-direction: column; gap: .3rem; }
 .footer__col strong { color: var(--white); font-family: var(--f-display); font-style: italic; text-transform: uppercase; font-size: .85rem; margin-bottom: .4rem; letter-spacing: .03em; }

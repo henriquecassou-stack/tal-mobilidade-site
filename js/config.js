@@ -29,8 +29,9 @@ window.TAL = {
       { dias: "Domingo e feriados", horas: "[PLACEHOLDER]" }
     ],
     // Fotos da loja (WebP recomendado, ~1600px de largura). Vazio = moldura placeholder.
-    fotoFachada: "",   // ex.: "assets/img/loja/fachada.webp"
-    fotoShowroom: ""   // ex.: "assets/img/loja/showroom.webp"
+    // Fotos tiradas do Instagram da TAL (@tal_mobilidade)
+    fotoFachada: "assets/img/loja/fachada.webp",
+    fotoShowroom: "assets/img/loja/showroom.webp"
   },
 
   /* ---------- Modelos ----------
@@ -67,7 +68,8 @@ window.TAL = {
       estilo: "retro",
       cor: "#9FE3D2",
       ilustracao: "retro",
-      foto: "", // ex.: "assets/img/modelos/retro.webp"
+      foto: "assets/img/modelos/retro.webp",
+      fotoAspecto: "4 / 5",
       nomeWhats: "Retrô"
     },
     {
@@ -83,9 +85,9 @@ window.TAL = {
       oferta: false,
       destaque: false,
       estilo: "urbana", // PLACEHOLDER — confirmar estilo
-      cor: "#C9CED6",   // PLACEHOLDER — confirmar cor
+      cor: "#C9CED6",
       ilustracao: "retro",
-      foto: "",
+      foto: "assets/img/modelos/y1.webp",
       nomeWhats: "Y1"
     },
     {
@@ -103,7 +105,7 @@ window.TAL = {
       estilo: "urbana",
       cor: "#F5B8CF",
       ilustracao: "cesta",
-      foto: "",
+      foto: "assets/img/modelos/compacta-rosa.webp",
       nomeWhats: "moto urbana compacta rosa (oferta de R$ 3.999)"
     },
     {
@@ -159,14 +161,15 @@ window.TAL = {
   },
 
   /* ---------- Clientes #vempraTal ---------- */
+  // Por enquanto: posts do Instagram da TAL. Trocar por fotos de clientes
+  // recebendo as scooters (com autorização) quando houver — ex.:
+  // { foto: "assets/img/clientes/cliente-01.webp", legenda: "Primeira scooter da Ana" },
   galeria: [
-    // PLACEHOLDER — fotos de clientes recebendo as scooters
-    // { foto: "assets/img/clientes/cliente-01.webp", legenda: "Primeira scooter da Ana" },
-    { foto: "", legenda: "[Foto de cliente — PLACEHOLDER]" },
-    { foto: "", legenda: "[Foto de cliente — PLACEHOLDER]" },
-    { foto: "", legenda: "[Foto de cliente — PLACEHOLDER]" },
-    { foto: "", legenda: "[Foto de cliente — PLACEHOLDER]" },
-    { foto: "", legenda: "[Foto de cliente — PLACEHOLDER]" }
+    { foto: "assets/img/clientes/sonho.webp",      legenda: "Esse sonho tem endereço" },
+    { foto: "assets/img/clientes/moto-rosa.webp",  legenda: "Moto compacta por R$ 3.999 à vista" },
+    { foto: "assets/img/clientes/convite.webp",    legenda: "Convite de inauguração · 24/10" },
+    { foto: "assets/img/clientes/retro-loja.webp", legenda: "A Retrô na calçada da loja" },
+    { foto: "assets/img/clientes/y1-rosa.webp",    legenda: "Y1 e moto compacta rosa" }
   ],
   depoimentos: [
     // PLACEHOLDER — usar depoimentos reais, com autorização do cliente

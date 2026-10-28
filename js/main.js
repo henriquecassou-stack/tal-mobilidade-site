@@ -97,9 +97,6 @@
     </svg>`;
   }
 
-  // Hero
-  $("#heroScooter").innerHTML = scooterSVG("#9FE3D2", "retro");
-
   /* ---------- Catálogo ---------- */
   const PH = '<span class="ph">[PLACEHOLDER]</span>';
 
@@ -119,7 +116,7 @@
 
     return `
       <article class="card${m.destaque ? " card--feature" : ""}" style="--c:${m.cor}" data-tags="${tags}">
-        <div class="card__media">
+        <div class="card__media${m.foto ? " card__media--photo" : ""}"${m.foto && m.fotoAspecto ? ` style="--ar:${m.fotoAspecto}"` : ""}>
           <div class="badges">
             ${m.oferta ? '<span class="badge badge--offer">Oferta</span>' : ""}
             ${m.destaque ? '<span class="badge">Mais procurada</span>' : ""}
