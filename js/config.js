@@ -1,7 +1,7 @@
 /* =============================================================
    TAL Mobilidade Urbana — CONFIGURAÇÃO DO SITE
    Edite aqui fotos, preços, modelos e valores da calculadora.
-   Tudo marcado com PLACEHOLDER precisa ser confirmado com a loja.
+   Tudo marcado com A DEFINIR precisa ser confirmado com a loja.
    ============================================================= */
 window.TAL = {
 
@@ -13,7 +13,7 @@ window.TAL = {
      a mensagem para a área de transferência do cliente. */
   whatsapp: {
     link: "https://wa.me/message/WVK6FG4PKO2HM1",
-    numero: "", // PLACEHOLDER — ex.: "5541900000000"
+    numero: "", // A DEFINIR — ex.: "5541900000000"
     mensagemPadrao: "Olá, TAL! Vim pelo site e quero conhecer as scooters elétricas ⚡"
   },
 
@@ -23,12 +23,12 @@ window.TAL = {
   loja: {
     endereco: "Avenida Jacob Macanhan, 4134 — Pinhais/PR",
     horarios: [
-      // PLACEHOLDER — confirmar com a loja
-      { dias: "Segunda a sexta", horas: "[PLACEHOLDER]" },
-      { dias: "Sábado", horas: "[PLACEHOLDER]" },
-      { dias: "Domingo e feriados", horas: "[PLACEHOLDER]" }
+      // A DEFINIR — confirmar com a loja
+      { dias: "Segunda a sexta", horas: "[A definir]" },
+      { dias: "Sábado", horas: "[A definir]" },
+      { dias: "Domingo e feriados", horas: "[A definir]" }
     ],
-    // Fotos da loja (WebP recomendado, ~1600px de largura). Vazio = moldura placeholder.
+    // Fotos da loja (WebP recomendado, ~1600px de largura). Vazio = moldura "em breve".
     // Fotos tiradas do Instagram da TAL (@tal_mobilidade)
     fotoFachada: "assets/img/loja/fachada.webp",
     fotoShowroom: "assets/img/loja/showroom.webp"
@@ -36,13 +36,13 @@ window.TAL = {
 
   /* ---------- Modelos ----------
      Campos:
-       nome          nome exibido (null = placeholder)
+       nome          nome exibido (null = "A definir")
        apelido       selinho curto acima do nome
        descricao     uma linha sobre o modelo
-       potencia      número em W (null = placeholder)
-       autonomia     texto, ex. "50–60 km" (null = placeholder)
+       potencia      número em W (null = "A definir")
+       autonomia     texto, ex. "50–60 km" (null = "A definir")
        autonomiaMax  número em km, usado no contador
-       bateria       texto (null = placeholder)
+       bateria       texto (null = "A definir")
        preco         número em R$ (null = "Consulte condições")
        oferta        true mostra selo "Oferta"
        destaque      true deixa o card grande
@@ -84,7 +84,7 @@ window.TAL = {
       preco: null,
       oferta: false,
       destaque: false,
-      estilo: "urbana", // PLACEHOLDER — confirmar estilo
+      estilo: "urbana", // A DEFINIR — confirmar estilo
       cor: "#C9CED6",
       ilustracao: "retro",
       foto: "assets/img/modelos/y1.webp",
@@ -92,13 +92,13 @@ window.TAL = {
     },
     {
       id: "urbana-compacta",
-      nome: null, // PLACEHOLDER — nome do modelo rosa com cestinha
+      nome: null, // A DEFINIR — nome do modelo rosa com cestinha
       apelido: "Compacta com cestinha",
       descricao: "Pequena, charmosa e pronta pra rotina na cidade.",
-      potencia: null,  // PLACEHOLDER
-      autonomia: null, // PLACEHOLDER
+      potencia: null,  // A DEFINIR
+      autonomia: null, // A DEFINIR
       autonomiaMax: null,
-      bateria: null,   // PLACEHOLDER
+      bateria: null,   // A DEFINIR
       preco: 3999,
       oferta: true,
       destaque: false,
@@ -110,13 +110,13 @@ window.TAL = {
     },
     {
       id: "chopper",
-      nome: null, // PLACEHOLDER — nome do modelo chopper/fat tire
+      nome: null, // A DEFINIR — nome do modelo chopper/fat tire
       apelido: "Fat tire · banco duplo",
       descricao: "Pneus largos, postura chopper e lugar pra garupa.",
-      potencia: null,  // PLACEHOLDER
-      autonomia: null, // PLACEHOLDER
+      potencia: null,  // A DEFINIR
+      autonomia: null, // A DEFINIR
       autonomiaMax: null,
-      bateria: null,   // PLACEHOLDER
+      bateria: null,   // A DEFINIR
       preco: null,
       oferta: false,
       destaque: false,
@@ -128,9 +128,9 @@ window.TAL = {
     },
     {
       id: "novo-modelo",
-      nome: null, // PLACEHOLDER — espaço para mais modelos/cores (ex.: amarelo)
+      nome: null, // A DEFINIR — espaço para mais modelos/cores (ex.: amarelo)
       apelido: "Mais cores na loja",
-      descricao: "Temos outras cores e versões no showroom. [PLACEHOLDER]",
+      descricao: "Temos outras cores e versões no showroom. [A definir]",
       potencia: null,
       autonomia: null,
       autonomiaMax: null,
@@ -172,9 +172,9 @@ window.TAL = {
     { foto: "assets/img/clientes/y1-rosa.webp",    legenda: "Y1 e moto compacta rosa" }
   ],
   depoimentos: [
-    // PLACEHOLDER — usar depoimentos reais, com autorização do cliente
-    { texto: "[Depoimento real do cliente — PLACEHOLDER]", nome: "[Nome]", modelo: "[Modelo]" },
-    { texto: "[Depoimento real do cliente — PLACEHOLDER]", nome: "[Nome]", modelo: "[Modelo]" },
-    { texto: "[Depoimento real do cliente — PLACEHOLDER]", nome: "[Nome]", modelo: "[Modelo]" }
+    // A DEFINIR — usar depoimentos reais, com autorização do cliente
+    { texto: "[Depoimento real do cliente — a definir]", nome: "[Nome]", modelo: "[Modelo]" },
+    { texto: "[Depoimento real do cliente — a definir]", nome: "[Nome]", modelo: "[Modelo]" },
+    { texto: "[Depoimento real do cliente — a definir]", nome: "[Nome]", modelo: "[Modelo]" }
   ]
 };

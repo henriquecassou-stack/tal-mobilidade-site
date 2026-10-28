@@ -98,10 +98,10 @@
   }
 
   /* ---------- Catálogo ---------- */
-  const PH = '<span class="ph">[PLACEHOLDER]</span>';
+  const PH = '<span class="ph">[A definir]</span>';
 
   function modelCard(m) {
-    const name = m.nome ? esc(m.nome) : '<span class="ph" style="font-size:1rem">[Nome do modelo — PLACEHOLDER]</span>';
+    const name = m.nome ? esc(m.nome) : '<span class="ph" style="font-size:1rem">[Nome do modelo — a definir]</span>';
     const power = m.potencia ? `${m.potencia.toLocaleString("pt-BR")} W` : PH;
     const range = m.autonomia ? esc(m.autonomia) : PH;
     const batt = m.bateria ? esc(m.bateria) : PH;
@@ -120,7 +120,7 @@
           <div class="badges">
             ${m.oferta ? '<span class="badge badge--offer">Oferta</span>' : ""}
             ${m.destaque ? '<span class="badge">Mais procurada</span>' : ""}
-            ${!m.foto ? '<span class="badge badge--ph">Foto: placeholder</span>' : ""}
+            ${!m.foto ? '<span class="badge badge--ph">Foto em breve</span>' : ""}
           </div>
           ${media}
           ${m.potencia || m.autonomiaMax ? `
@@ -219,7 +219,7 @@
 
   /* ---------- Loja ---------- */
   $("#hours").innerHTML = cfg.loja.horarios
-    .map((h) => `<li><span>${esc(h.dias)}</span><span${h.horas.includes("PLACEHOLDER") ? ' class="ph"' : ""}>${esc(h.horas)}</span></li>`)
+    .map((h) => `<li><span>${esc(h.dias)}</span><span${h.horas.includes("A definir") ? ' class="ph"' : ""}>${esc(h.horas)}</span></li>`)
     .join("");
   [["#fotoFachada", cfg.loja.fotoFachada, "Fachada da loja TAL Mobilidade Elétrica em Pinhais"],
    ["#fotoShowroom", cfg.loja.fotoShowroom, "Showroom da TAL com scooters elétricas"]].forEach(([sel, src, alt]) => {
